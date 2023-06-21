@@ -1,6 +1,6 @@
 # rig-ubuntu
 
-A docker image with R-release and R-devel preconfigured, built daily at midnight UTC.
+A Docker image with R release and devel installed via [rig](https://github.com/r-lib/rig/), built daily at midnight UTC.
 
 ## Usage
 
