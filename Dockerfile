@@ -16,4 +16,6 @@ RUN curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux-lat
 
 RUN rig add release && rig add devel
 
+RUN R -q -e 'pak::pak(c("devtools", "cpp11", "decor"))' && R-devel -q -e 'pak::pak(c("devtools", "cpp11", "decor"))'
+
 WORKDIR /root/workspace
