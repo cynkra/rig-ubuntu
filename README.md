@@ -12,6 +12,6 @@ This mounts the current working directory at `~/workspace`, which is also initia
 
 ## In a Dockerfile
 
-```docker
+```dockerfile
 FROM ghcr.io/cynkra/rig-ubuntu:main
 ```
