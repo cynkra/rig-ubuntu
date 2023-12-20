@@ -16,6 +16,8 @@ RUN /usr/sbin/update-ccache-symlinks
 
 RUN curl -Ls https://github.com/r-lib/rig/releases/download/latest/rig-linux-latest.tar.gz | sudo tar xz -C /usr/local
 
-RUN rig add release && rig add devel
+RUN rig add release && R -q -e 'pak::pak(c("devtools", "decor"))'
+
+RUN rig add devel && R-devel -q -e 'pak::pak(c("devtools", "decor"))'
 
 WORKDIR /root/workspace
