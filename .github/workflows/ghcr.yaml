@@ -51,7 +51,7 @@ jobs:
         uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
         with:
           context: .
-          cache-from: ${{ ( github.event_name != 'schedule' || github.event_name != 'workflow_dispatch' ) && 'type=gha' || '' }}
+          cache-from: ${{ ( github.event_name != 'schedule' && github.event_name != 'workflow_dispatch' && 'type=gha' ) || '' }}
           cache-to: type=gha,mode=max
           push: true
           tags: ${{ steps.meta.outputs.tags }}
